@@ -1,1 +1,29 @@
-<p>list-feedback works!</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">EmpId</th>
+      <th scope="col">EmpName</th>
+      <th scope="col">ProjectName</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Comments</th>
+      <th scope="col">mgrRating</th>
+      <th scope="col">mgrComments</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let feedback of feedbackLists; index as i">
+      <td>{{ feedback.empId }}</td>
+      <td>{{ feedback.empName }}</td>
+      <td>{{ projects[feedback.project] }}</td>
+      <td>{{ feedback.ratings }}</td>
+      <td>{{ feedback.comments }}</td>
+      <td>{{ feedback.mgrRating }}</td>
+      <td>{{ feedback.mgrComments }}</td>
+      <td>
+        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-danger" (click)="deleteFeedback(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

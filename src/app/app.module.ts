@@ -1,9 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModule, NgbRatingConfig } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
@@ -23,8 +23,13 @@ import { ListFeedbackComponent } from "./components/list-feedback/list-feedback.
     FeedbackComponent,
     ListFeedbackComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, NgbModule],
+  providers: [NgbRatingConfig],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(config: NgbRatingConfig) {
+    // customize default values of ratings used by this component tree
+    config.max = 5;
+  }
+}

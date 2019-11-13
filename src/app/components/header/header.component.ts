@@ -10,6 +10,7 @@ import { data } from "../../../data";
 })
 export class HeaderComponent implements OnInit {
   name: string = "";
+  type: string = "";
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
 
       if (user.length) {
         this.name = user[0].name;
+        this.type = user[0].empType;
       } else {
         alert("User not found");
         this.router.navigate(["login"]);
