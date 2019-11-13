@@ -13,7 +13,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const user = data.user.filter(user => user.id === params.id);
+      const user = data.users.filter(user => user.id === params.id);
 
       if (user.length) {
         this.user = user[0];

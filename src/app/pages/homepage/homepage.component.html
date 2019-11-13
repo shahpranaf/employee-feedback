@@ -1,11 +1,13 @@
-<app-header></app-header>
-<ngb-tabset>
-  <ngb-tab title="New Feedback">
-    <ng-template ngbTabContent>
-      <app-feedback [user]="user"></app-feedback>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="List">
-    <ng-template ngbTabContent><app-list-feedback [user]="user"></app-list-feedback></ng-template>
-  </ngb-tab>
-</ngb-tabset>
+<div class="homepage container">
+  <app-header></app-header>
+  <ngb-tabset>
+    <ngb-tab *ngIf="user['empType'] !== 'manager'" title="New Feedback">
+      <ng-template ngbTabContent>
+        <app-feedback [user]="user"></app-feedback>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="List">
+      <ng-template ngbTabContent><app-list-feedback [user]="user"></app-list-feedback></ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

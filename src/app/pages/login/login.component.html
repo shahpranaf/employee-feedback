@@ -27,4 +27,14 @@
       <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary btn-lg btn-block">SUBMIT</button>
     </div>
   </form>
+
+  <div>
+    <ul>
+      <li *ngFor="let item of users">
+        Username:{{ item.email }}<br />
+        Password: 1234<br />
+        Type:{{ item.empType }}
+      </li>
+    </ul>
+  </div>
 </div>

@@ -13,14 +13,17 @@ export class LoginComponent implements OnInit {
     email: "",
     password: ""
   };
+  users;
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.users = data.users;
+  }
 
   onSubmit(form) {
     if (form.submitted) {
       /* checking login via service */
-      const isvalidUser = data.user.filter(user => user.email === this.formModel.email);
+      const isvalidUser = data.users.filter(user => user.email === this.formModel.email);
       if (isvalidUser.length) {
         this.router.navigate(["/home/" + isvalidUser[0].id]);
       } else {

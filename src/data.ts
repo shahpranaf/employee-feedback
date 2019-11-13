@@ -1,5 +1,5 @@
 export const data = {
-  user: [
+  users: [
     {
       id: "1",
       name: "Emp1",
@@ -14,8 +14,8 @@ export const data = {
     },
     {
       id: "3",
-      name: "Emp3",
-      email: "emp3@gmail.com",
+      name: "ManagerEmp3",
+      email: "manager@gmail.com",
       empType: "manager"
     }
   ],
